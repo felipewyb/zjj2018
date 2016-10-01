@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <!-- 指明满足“/*”的页面，将被“/WEB-INF/views/decorators/decorator.html”所装饰 -->
+
+			<!--司机简历1 --><mapping path="/sijijianli_*" decorator="/frame/left.jsp" />
+			<!--驾照类型--><mapping path="/jiazhaoleixing_*" decorator="/frame/left.jsp" />
+			<!--驾照类型--><mapping path="/sijileixing_*" decorator="/frame/left.jsp" />
+       		<!--司机简历 --><mapping path="/siji_*" decorator="/frame/left.jsp" />
+       		<!--司机地区 --><mapping path="/diqu_*" decorator="/frame/left.jsp" />
+       		<!--司机等级 --><mapping path="/dengji_*" decorator="/frame/left.jsp" />
+
+    <!--欢迎 --><mapping path="/welcome_*" decorator="/frame/left.jsp" />
+
+ </sitemesh>

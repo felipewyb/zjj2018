@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document 隐藏弹出层*/
+
+.popup_overlay,.popup_overlay2
+{
+	display: none;
+    position: fixed;
+    top:0%;
+    left:0%;
+	right:0%;
+    width:100%;
+    height:100%;
+    background:url(feed_0003.png);
+    z-index:1001;
+	}
+	
+.popup_overlay2
+{
+	display:block;
+	}
+	
+.popup_content 
+{
+	position:absolute;
+    display: none;
+    z-index:1002;
+	top:20%;
+	left: 28%;
+	min-height: 360px;
+	background:#fff;
+	margin-top:0px!important;/*FF IE7 该值为本身高的一半*/
+	margin-bottom:0px;
+	_top:expression(eval(document.compatMode &&
+	document.compatMode=='CSS1Compat') ?
+	documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+	document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+	}
+	

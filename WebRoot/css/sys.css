@@ -1,0 +1,128 @@
+body{
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+    FONT-SIZE: 12px; 
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px; 
+	SCROLLBAR-FACE-COLOR: #A3DAFF;
+	SCROLLBAR-HIGHLIGHT-COLOR: #D2EDFF;
+	SCROLLBAR-SHADOW-COLOR: #4b9da7; 
+	SCROLLBAR-ARROW-COLOR: #035c80; 
+	SCROLLBAR-BASE-COLOR: #4b9da7; 
+	scrollbar-3d-light-color: #4B9DA7;
+	scrollbar-dark-shadow-color: #4B9DA7
+	BACKGROUND-COLOR: #C1D3FB;
+}
+table        {
+ border-collapse: collapse;
+ width=98%;
+ }
+input,textarea {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	background-color: ffffff;
+	border: 1px solid #ffffff;
+width: 100%;
+
+	
+}
+TD, TH {
+	font-size: 12px;
+	border-color: #5AC9FE;
+	height=18;
+}.title {
+	background-color: #B8DCED;
+}
+.tabtd1 {  
+  line-height: 20px; 
+  font-family: "����"; 
+  font-size: 12px; 
+}
+
+.tabtd2 {
+  line-height: 20px; 
+  font-family: "����"; 
+  font-size: 12px; 
+  background-color: #E8F7FF
+}
+.bgtable {
+	background-color: #FFFFFF;
+	border: 1pt solid #5AC9FE;
+}
+.img {
+	border: 0px none;
+}
+.tableright {
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+.tableleft {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+}
+.tablecenter {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: 0px;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-right-style: none;
+}
+.inputt {
+	BACKGROUND-COLOR: transparent;
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid #000000;
+	border-left: none;
+}
+.wukuang {
+	border: 0px none;
+	background-image: url(../images/tbg.gif);
+}
+.dixian {
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #000000;
+	BACKGROUND-COLOR: transparent;
+}
+.radio {
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-bottom-color: #000000;
+	BACKGROUND-COLOR: transparent;
+}
+.henglan {
+	background-color: #A6E0FF;
+}
+.topg {
+	height: 5px;
+}
+.topd {
+	height: 0px;
+}
+.imgd {
+	vertical-align: bottom;
+	border: 0px none;
+}
+

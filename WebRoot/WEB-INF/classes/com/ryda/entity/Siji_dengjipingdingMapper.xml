@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ryda.mapper.Siji_dengjipingdingMapper" >
+  <resultMap id="BaseResultMap" type="com.ryda.entity.Siji_dengjipingding" >
+    <id column="siji_dengjiid" property="sijiDengjiid" jdbcType="VARCHAR" />
+    <result column="dengji" property="dengji" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    siji_dengjiid, dengji
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from siji_dengjipingding
+    where siji_dengjiid = #{sijiDengjiid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from siji_dengjipingding
+    where siji_dengjiid = #{sijiDengjiid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ryda.entity.Siji_dengjipingding" >
+    insert into siji_dengjipingding (siji_dengjiid, dengji)
+    values (#{sijiDengjiid,jdbcType=VARCHAR}, #{dengji,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ryda.entity.Siji_dengjipingding" >
+    insert into siji_dengjipingding
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sijiDengjiid != null" >
+        siji_dengjiid,
+      </if>
+      <if test="dengji != null" >
+        dengji,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sijiDengjiid != null" >
+        #{sijiDengjiid,jdbcType=VARCHAR},
+      </if>
+      <if test="dengji != null" >
+        #{dengji,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ryda.entity.Siji_dengjipingding" >
+    update siji_dengjipingding
+    <set >
+      <if test="dengji != null" >
+        dengji = #{dengji,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where siji_dengjiid = #{sijiDengjiid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ryda.entity.Siji_dengjipingding" >
+    update siji_dengjipingding
+    set dengji = #{dengji,jdbcType=VARCHAR}
+    where siji_dengjiid = #{sijiDengjiid,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="queryDengji" resultMap="BaseResultMap">
+  select * from siji_dengjipingding
+  </select>
+  
+</mapper>

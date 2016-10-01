@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="hit_202"
+  id="myeclipse.1461640096070"
+  context-root="/rongyd"
+  j2ee-spec="5.0"
+  archive="hit_202.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

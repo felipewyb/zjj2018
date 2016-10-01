@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ryda.mapper.SijijianliMapper" >
+  <resultMap id="BaseResultMap" type="com.ryda.entity.Sijijianli" >
+    <id column="sijijianli_id" property="sijijianliId" jdbcType="VARCHAR" />
+    <result column="jaizhaoleixing_id" property="jaizhaoleixingId" jdbcType="VARCHAR" />
+    <result column="siji_xingbie" property="sijiXingbie" jdbcType="VARCHAR" />
+    <result column="siji_shoujihao" property="sijiShoujihao" jdbcType="VARCHAR" />
+    <result column="siji_addtime" property="sijiAddtime" jdbcType="DATE" />
+    <result column="siji_suoshudiqu" property="sijiSuoshudiqu" jdbcType="VARCHAR" />
+    <result column="siji_chushengriqi" property="sijiChushengriqi" jdbcType="DATE" />
+    <result column="siji_xingming" property="sijiXingming" jdbcType="VARCHAR" />
+    <result column="siji_jialing" property="sijiJialing" jdbcType="VARCHAR" />
+    <result column="siji_nianling" property="sijiNianling" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    sijijianli_id, jaizhaoleixing_id, siji_xingbie, siji_shoujihao, siji_addtime, siji_suoshudiqu, 
+    siji_chushengriqi, siji_xingming, siji_jialing, siji_nianling
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sijijianli
+    where sijijianli_id = #{sijijianliId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sijijianli
+    where sijijianli_id = #{sijijianliId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ryda.entity.Sijijianli" >
+    insert into sijijianli (sijijianli_id, jaizhaoleixing_id, siji_xingbie, 
+      siji_shoujihao, siji_addtime, siji_suoshudiqu, 
+      siji_chushengriqi, siji_xingming, siji_jialing, 
+      siji_nianling)
+    values (#{sijijianliId,jdbcType=VARCHAR}, #{jaizhaoleixingId,jdbcType=VARCHAR}, #{sijiXingbie,jdbcType=VARCHAR}, 
+      #{sijiShoujihao,jdbcType=VARCHAR}, #{sijiAddtime,jdbcType=DATE}, #{sijiSuoshudiqu,jdbcType=VARCHAR}, 
+      #{sijiChushengriqi,jdbcType=DATE}, #{sijiXingming,jdbcType=VARCHAR}, #{sijiJialing,jdbcType=VARCHAR}, 
+      #{sijiNianling,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ryda.entity.Sijijianli" >
+    insert into sijijianli
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sijijianliId != null" >
+        sijijianli_id,
+      </if>
+      <if test="jaizhaoleixingId != null" >
+        jaizhaoleixing_id,
+      </if>
+      <if test="sijiXingbie != null" >
+        siji_xingbie,
+      </if>
+      <if test="sijiShoujihao != null" >
+        siji_shoujihao,
+      </if>
+      <if test="sijiAddtime != null" >
+        siji_addtime,
+      </if>
+      <if test="sijiSuoshudiqu != null" >
+        siji_suoshudiqu,
+      </if>
+      <if test="sijiChushengriqi != null" >
+        siji_chushengriqi,
+      </if>
+      <if test="sijiXingming != null" >
+        siji_xingming,
+      </if>
+      <if test="sijiJialing != null" >
+        siji_jialing,
+      </if>
+      <if test="sijiNianling != null" >
+        siji_nianling,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sijijianliId != null" >
+        #{sijijianliId,jdbcType=VARCHAR},
+      </if>
+      <if test="jaizhaoleixingId != null" >
+        #{jaizhaoleixingId,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiXingbie != null" >
+        #{sijiXingbie,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiShoujihao != null" >
+        #{sijiShoujihao,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiAddtime != null" >
+        #{sijiAddtime,jdbcType=DATE},
+      </if>
+      <if test="sijiSuoshudiqu != null" >
+        #{sijiSuoshudiqu,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiChushengriqi != null" >
+        #{sijiChushengriqi,jdbcType=DATE},
+      </if>
+      <if test="sijiXingming != null" >
+        #{sijiXingming,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiJialing != null" >
+        #{sijiJialing,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiNianling != null" >
+        #{sijiNianling,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ryda.entity.Sijijianli" >
+    update sijijianli
+    <set >
+      <if test="jaizhaoleixingId != null" >
+        jaizhaoleixing_id = #{jaizhaoleixingId,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiXingbie != null" >
+        siji_xingbie = #{sijiXingbie,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiShoujihao != null" >
+        siji_shoujihao = #{sijiShoujihao,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiAddtime != null" >
+        siji_addtime = #{sijiAddtime,jdbcType=DATE},
+      </if>
+      <if test="sijiSuoshudiqu != null" >
+        siji_suoshudiqu = #{sijiSuoshudiqu,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiChushengriqi != null" >
+        siji_chushengriqi = #{sijiChushengriqi,jdbcType=DATE},
+      </if>
+      <if test="sijiXingming != null" >
+        siji_xingming = #{sijiXingming,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiJialing != null" >
+        siji_jialing = #{sijiJialing,jdbcType=VARCHAR},
+      </if>
+      <if test="sijiNianling != null" >
+        siji_nianling = #{sijiNianling,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sijijianli_id = #{sijijianliId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ryda.entity.Sijijianli" >
+    update sijijianli
+    set jaizhaoleixing_id = #{jaizhaoleixingId,jdbcType=VARCHAR},
+      siji_xingbie = #{sijiXingbie,jdbcType=VARCHAR},
+      siji_shoujihao = #{sijiShoujihao,jdbcType=VARCHAR},
+      siji_addtime = #{sijiAddtime,jdbcType=DATE},
+      siji_suoshudiqu = #{sijiSuoshudiqu,jdbcType=VARCHAR},
+      siji_chushengriqi = #{sijiChushengriqi,jdbcType=DATE},
+      siji_xingming = #{sijiXingming,jdbcType=VARCHAR},
+      siji_jialing = #{sijiJialing,jdbcType=VARCHAR},
+      siji_nianling = #{sijiNianling,jdbcType=VARCHAR}
+    where sijijianli_id = #{sijijianliId,jdbcType=VARCHAR}
+  </update>
+  
+ <select id="querySijijianli" resultMap="BaseResultMap">
+  select * from sijijianli  
+  </select>
+  
+</mapper>

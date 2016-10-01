@@ -124,6 +124,11 @@
 	<!--欢迎页面 -->
 	<bean id="welcomeAction" class="com.ryda.action.WelcomeAction" scope="prototype">
 	</bean>
+
+	<!-- 验证码 -->
+	<bean id="securityCodeImageAction" class="com.ryda.action.ValidCodeAction" scope="prototype">
+	</bean>
+
 </beans>
 
 	 

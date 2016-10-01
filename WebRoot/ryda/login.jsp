@@ -31,11 +31,18 @@
 
 <script type="text/javascript">
 
+    function shuaxin(){
+
+        var obj=document.getElementById("Verify");
+        obj.setAttribute("src", "sci_execute.action?timestamp="+new Date().getTime());
+
+    }
 
     function loginFormSub(){
 
         var username=document.getElementById("username").value;
         var password=document.getElementById("password").value;
+        var vcode=document.getElementById("vcode").value;
 
 
         if(username==null || username=="" ){
@@ -48,6 +55,10 @@
             return;
         }
 
+        if(vcode==null || vcode=="" ){
+            alert("验证码不能为空！请重新输入！");
+            return;
+        }
 
 
         else
@@ -90,9 +101,21 @@
                 </div>
             </div>
 
+            <div class="password">
+                <div class="passwordinner">
+                    <input type="text" name="vcode" id="vcode"  placeholder="ValidationCode"  />
+                    <div class="custom_float_right custom_line_height_50 custom_margin_right_10" ><a href="javascript:shuaxin()">看不清，换一个！</a>
+                    </div>
+                    <img src="sci_execute.action" id="Verify" class="custom_float_right custom_margin_top_10 custom_margin_right_10"  />
+                </div>
 
+            </div>
             <input id="loginbtn" type="button" name="loginbtn" onclick="loginFormSub();"  class="custom_width_100b custom_line_height_50 custom_height_50 custom_display_block custom_background_0099cc custom_color_fff custom_font_size_14 custom_border_0 custom_border_radius_4" value="登录" />
 
+            <br>
+            <div class="notibar msgalert">
+                <p> ${returnValue } </p>
+            </div>
 
 
         </form>

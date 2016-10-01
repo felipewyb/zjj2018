@@ -24,6 +24,7 @@ public class LoginFilter implements Filter{
         //这里判断目录，后缀名，当然也可以写在web.xml中，用url-pattern进行拦截映射
         if ((!request.getServletPath().equals("/login_user.action"))//登录页action
                 && (!request.getServletPath().equals("/login_login.action")) //登录提交action
+                && (!request.getServletPath().equals("/sci_execute.action")) //验证码action
                 && (!request.getServletPath().contains(".css"))//后缀.css放行
                 && (!request.getServletPath().contains(".js"))//后缀.js放行
                 && (!request.getServletPath().contains(".png"))//后缀.png放行

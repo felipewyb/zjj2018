@@ -92,7 +92,7 @@
     <div class="custom_width_240 custom_float_left">
         <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
             <ul id="demo-list">
-                <li class="active"><a href="#"><i class="iconfont custom_font_size_20">&#xe653;</i>司机管理 </a>
+                <li class="active"><a href="#"><i class="iconfont icon_yonghuguanli"></i>司机管理 </a>
                     <ul class="submenu">
                         <li><a href="<%=basePath%>siji_query.action">司机简历 </a></li>
                         <%-- <li><a href="<%=basePath%>sijijianli_query.action">司机简历 </a></li>  --%>
@@ -100,18 +100,18 @@
                         <li><a href="<%=basePath%>jiazhaoleixing_query.action">驾照类型 </a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class="iconfont custom_font_size_20">&#xe604;</i>基本档案 </a>
+                <li><a href="#"><i class="iconfont icon_jibendangan"></i>基本档案 </a>
                     <ul class="submenu">
                         <li><a href="<%=basePath%>diqu_query.action">所属地区 </a></li>
                         <li><a href="<%=basePath%>dengji_query.action">等级评定 </a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i  class="iconfont custom_font_size_20">&#xe62c;</i>权限管理 </a>
+                <li><a href="#"><i  class="iconfont icon_quanxianguanli"></i>权限管理 </a>
                     <ul class="submenu">
                         <li><a href="<%=basePath%>updateUsers.action">角色管理 </a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i  class="iconfont custom_font_size_20">&#xe62c;</i>个人设置</a>
+                <li><a href="#"><i  class="iconfont icon_gerenxinxi"></i>个人设置</a>
                     <ul class="submenu">
                         <li><a href="<%=basePath%>xwyh_query.action">修改密码 </a></li>
                     </ul>

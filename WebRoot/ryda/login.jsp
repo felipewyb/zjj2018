@@ -101,12 +101,11 @@
                 </div>
             </div>
 
-            <div class="password">
-                <div class="passwordinner">
+            <div class="password2">
+                <div class="passwordinner2">
                     <input type="text" name="vcode" id="vcode"  placeholder="ValidationCode"  />
-                    <div class="custom_float_right custom_line_height_50 custom_margin_right_10" ><a href="javascript:shuaxin()">看不清，换一个！</a>
-                    </div>
-                    <img src="sci_execute.action" id="Verify" class="custom_float_right custom_margin_top_10 custom_margin_right_10"  />
+
+                    <img src="sci_execute.action" id="Verify" class="custom_float_right custom_margin_top_10 custom_margin_right_10" onclick="javascript:shuaxin()" />
                 </div>
 
             </div>

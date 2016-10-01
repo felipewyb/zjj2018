@@ -89,7 +89,7 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 
 .loginpage { background: #fff url(../images/patternbg.png); }
 .loginbox { 
-	width: 350px; padding: 5px; background: #fff; margin: 7% auto 0 auto; -moz-border-radius: 2px; -webkit-border-radius: 2px;
+	width: 500px; padding: 5px; background: #fff; margin: 10% auto 0 auto; -moz-border-radius: 2px; -webkit-border-radius: 2px;
 	border-radius: 2px; -moz-box-shadow: 0 0 2px rgba(0,0,0,0.3); -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.3); 
 	box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
@@ -128,6 +128,17 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 .loginbox .passwordinner { margin-left: 45px; border-left: 1px solid #ddd; background: #fff; }
 .loginbox .password input { 
 	padding: 15px 10px; border: 0; font-size: 14px; width: 330px; box-shadow: none; color: #666; 
+	font-family: "Microsoft yahei";
+}
+
+.loginbox .password2 { 
+	background: #eee url(../images/icons/password2.png) no-repeat 13px center; -moz-border-radius: 2px; -webkit-border-radius: 2px; 
+	border-radius: 2px; -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4); -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4); 
+	box-shadow: 0 1px 2px rgba(0,0,0,0.4); margin: 20px 0; overflow: hidden;
+}
+.loginbox .passwordinner2 { margin-left: 45px; border-left: 1px solid #ddd; background: #fff; }
+.loginbox .password2 input { 
+	padding: 15px 10px; border: 0; font-size: 14px; width: 180px; box-shadow: none; color: #666; 
 	font-family: "Microsoft yahei";
 }
 

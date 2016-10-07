@@ -1,9 +1,13 @@
 package com.ryda.action;
 
-import java.util.List;
-
 import com.ryda.entity.Sijileixing;
 import com.ryda.service.ISijileixingService;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 public class SijileixingAction {
 	/**
@@ -26,7 +30,12 @@ public class SijileixingAction {
 	 * 主键集合，删除用
 	 */
 	private String[] ids;
-	
+
+	/**
+	 * 检验重复用
+	 */
+	private String sjlx;
+
 	/**
 	 * 查询所有数据
 	 * @return
@@ -127,7 +136,31 @@ public class SijileixingAction {
 	public void setIds(String[] ids) {
 		this.ids = ids;
 	}
-	
-	
+
+	public String getSjlx() {
+		return sjlx;
+	}
+
+	public void setSjlx(String sjlx) {
+		this.sjlx = sjlx;
+	}
+
+	/**
+	 * 检查是否重复
+	 */
+	public void checkforrepeat() throws IOException {
+		int a=0;
+
+		a=service.checkforrepeat(sjlx);
+
+		HttpServletResponse response = ServletActionContext.getResponse();
+		PrintWriter out = response.getWriter();
+
+		if(a==1){
+			out.print("{\"success\":false,\"message\":\"输入内容重复，请重新输入\"}");
+		}else{
+			out.print("{\"success\":true,\"message\":\"输入内容不重复，可用\"}");
+		}
+	}
 	
 }

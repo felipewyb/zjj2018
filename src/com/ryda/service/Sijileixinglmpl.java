@@ -54,4 +54,8 @@ public class Sijileixinglmpl implements ISijileixingService {
 		}
 	}
 
+    @Override
+    public int checkforrepeat(String sjlx) {
+		return mapper.checkforrepeat(sjlx);    }
+
 }

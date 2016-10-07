@@ -1,9 +1,9 @@
 package com.ryda.service;
 
+import com.ryda.entity.Sijileixing;
+
 import java.util.List;
 import java.util.Map;
-
-import com.ryda.entity.Sijileixing;
 
 public interface ISijileixingService {
 
@@ -20,4 +20,5 @@ public interface ISijileixingService {
 	void delete(String[] ids);
 
 
+    int checkforrepeat(String sjlx);
 }

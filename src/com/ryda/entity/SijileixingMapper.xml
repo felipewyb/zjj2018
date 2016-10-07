@@ -72,5 +72,10 @@
   <select id="querySijileixing" resultMap="BaseResultMap">
   select * from sijileixing  
   </select>
-  
+
+  <select id="checkforrepeat" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select  count(*)
+    from sijileixing
+    where leixing_name like #{leixingName,jdbcType=VARCHAR}
+  </select>
 </mapper>

@@ -7,18 +7,44 @@
 <html>
 <head>
 <title>Lomboz JSP</title>
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/turingzg.js"></script>
-<script src="<%= request.getContextPath() %>/js/validate.js"></script>
+
 </head>
 
 <body class="withvernav">
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery-1.4.2.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/validate.js"></script>
+
 	<script type="text/javascript">
 	
-		function addFormSub()
-		{
-			  //alert();
-			  document.getElementById("addForm").submit();
+		function addFormSub() {
+			if (Validator.Validate(document.getElementById("addForm"), 3)) {
+				document.getElementById("addForm").submit();
+
+			}
+		}
+
+		function checkForRepeat(){
+			var sjlx=document.getElementById("sjlx").value;
+
+			var url="<%= request.getContextPath() %>/sijileixing_checkforrepeat.action";
+			var data={sjlx:sjlx};
+			$.post(url,data,function (msg) {
+						console.info(msg);
+						if(msg.success==false){
+							alert(msg.message);
+							document.getElementById("baocun").style.display="none";
+						}else{
+							document.getElementById("baocun").style.display="block";
+						}
+
+
+
+					}
+					,"json"
+			);
+
+
+
 		}
 		
 	
@@ -32,7 +58,12 @@
 	    <div class="custom_width_900 custom_min_height_250">   
 	        <p>
 	            <label>司机类型名称：</label>
-	            <span class="field"><input type="text"  class="smallinput" name="obj.leixingName" value="" placeholder="请添加司机类型"></span>
+	            <span class="field">
+					<input type="text"  class="smallinput"  id="sjlx"
+				name="obj.leixingName" value="" placeholder="请添加司机类型"
+				require="true" min="1" datatype='Limit' msg="请输入司机类型！"
+				onblur="checkForRepeat();"
+				></span>
 	        </p>
 	         
 	        
@@ -40,7 +71,7 @@
 	       
 	    </div>
 	    <div class="custom_width_900 custom_height_40">
-	        <input type="button" onclick="addFormSub();" name="" class="stdbtn btn_blue custom_padding_8_20_8_20 custom_width_100 custom_forms_button_lan custom_float_right custom_margin_right_5" value="提交">
+	        <input id="baocun" type="button" onclick="addFormSub();" name="" class="stdbtn btn_blue custom_padding_8_20_8_20 custom_width_100 custom_forms_button_lan custom_float_right custom_margin_right_5" value="提交">
 	    </div>
 	</form>
 	<div class="clear"></div>

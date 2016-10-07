@@ -1,9 +1,9 @@
 package com.ryda.mapper;
 
+import com.ryda.entity.Sijileixing;
+
 import java.util.List;
 import java.util.Map;
-
-import com.ryda.entity.Sijileixing;
 
 public interface SijileixingMapper {
     int deleteByPrimaryKey(String sijileixigId);
@@ -19,4 +19,6 @@ public interface SijileixingMapper {
     int updateByPrimaryKey(Sijileixing record);
 
     List<Map<String, Object>> querySijileixing();
+
+    int checkforrepeat(String sjlx);
 }

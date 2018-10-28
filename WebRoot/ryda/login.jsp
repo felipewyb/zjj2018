@@ -14,7 +14,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=8" />
     <![endif]–>
 
-    <title>嵘雅达后台管理系统登录</title>
+    <title>纸巾机管理后台 欢迎登陆</title>
     <link rel="stylesheet" href="bag/css/style.default.css" type="text/css" />
     <link rel="stylesheet" href="bag/css/custom/custom.css" type="text/css" />
     <script type="text/javascript" src="bag/js/plugins/jquery-1.7.min.js"></script>
@@ -82,8 +82,8 @@
     <div class="loginboxinner">
 
         <div class="logo">
-            <h1 class="logo custom_margin_bottom_15 custom_padding_bottom_20"><span class="custom_color_lan_0099cc custom_font_size_28">宜租车联网集团</span></h1>
-            <span class="slogan custom_color_fff custom_font_size_16">嵘雅达后台管理系统</span>
+            <h1 class="logo custom_margin_bottom_15 custom_padding_bottom_20"><span class="custom_color_ju_ff9900 custom_font_size_28">纸巾机管理后台</span></h1>
+            <span class="slogan custom_color_fff custom_font_size_16"> VERSION: 1.0</span>
         </div>
 
         <form id="loginForm" name="loginForm" action="login_login.action" method="post">
@@ -125,7 +125,7 @@
 <div style="clear:both;"></div>
 <div class="custom_line_height_150 custom_width_100b">&nbsp;</div>
 <div class="custom_width_100b custom_height_60 custom_line_height_60 custom_text_align_center custom_background_3c4f6d custom_color_fff custom_margin_top_60 custom_bottom_0 custom_position_fixed">
-    <span>© 2016 【嵘雅达后台管理系统 POWERED BY 宜租车联网集团UCAR-NET.CN】 版权所有</span>
+    <span>2018 纸巾机管理后台 © 信腾科技 版权所有</span>
 </div>
 </body>
 </html>

@@ -61,8 +61,10 @@
 <div class="bodywrapper">
     <div class="topheader custom_padding_top_0 custom_padding_bottom_0 custom_padding_left_0 custom_height_100">
         <div class="left">
-            <h1 class="logo custom_margin_top_0 custom_margin_bottom_0"><img src="images/ucar.png" width="105%" height="100"></h1>
-            <span class="slogan custom_padding_top_0 custom_padding_bottom_0 custom_height_100 custom_font_size_20 custom_line_height_100">嵘雅达后台管理系统</span>
+            <h1 class="logo custom_margin_top_0 custom_margin_bottom_0">
+                <%--<img src="images/ucar.png" width="105%" height="100">--%>
+            </h1>
+            <span class="slogan custom_padding_top_0 custom_padding_bottom_0 custom_height_100 custom_font_size_20 custom_line_height_100">纸巾机管理后台 V1.0</span>
             <br clear="all" />
         </div>
 
@@ -87,33 +89,38 @@
             </div>
         </div>
     </div>
-    <title>嵘雅达后台管理系统</title>
+    <title>管理后台</title>
 
     <div class="custom_width_240 custom_float_left">
         <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
             <ul id="demo-list">
-                <li class="active"><a href="#"><i class="iconfont icon_yonghuguanli"></i>司机管理 </a>
+                <li class="active"><a href="#"><i class="iconfont icon_yonghuguanli"></i>设备管理 </a>
                     <ul class="submenu">
-                        <li><a href="<%=basePath%>siji_query.action">司机简历 </a></li>
-                        <%-- <li><a href="<%=basePath%>sijijianli_query.action">司机简历 </a></li>  --%>
-                        <li><a href="<%=basePath%>sijileixing_query.action">司机类型 </a></li>
-                        <li><a href="<%=basePath%>jiazhaoleixing_query.action">驾照类型 </a></li>
+                        <li><a href="<%=basePath%>sijileixing_query.action">查看设备 </a></li>
+                        <li><a href="<%=basePath%>siji_query.action">设备类型 </a></li>
+                        <li><a href="<%=basePath%>siji_query.action">设备审核 </a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class="iconfont icon_jibendangan"></i>基本档案 </a>
+                <li><a href="#"><i class="iconfont icon_jibendangan"></i>广告管理 </a>
                     <ul class="submenu">
-                        <li><a href="<%=basePath%>diqu_query.action">所属地区 </a></li>
-                        <li><a href="<%=basePath%>dengji_query.action">等级评定 </a></li>
+                        <li><a href="<%=basePath%>diqu_query.action">添加广告</a></li>
+                        <li><a href="<%=basePath%>dengji_query.action">广告管理 </a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i  class="iconfont icon_quanxianguanli"></i>权限管理 </a>
+                <li><a href="#"><i  class="iconfont icon_quanxianguanli"></i>子后台管理 </a>
                     <ul class="submenu">
-                        <li><a href="<%=basePath%>updateUsers.action">角色管理 </a></li>
+                        <li><a href="<%=basePath%>updateUsers.action">子后台角色分配 </a></li>
+                        <li><a href="<%=basePath%>updateUsers.action">子后台分配 </a></li>
+                        <li><a href="<%=basePath%>updateUsers.action">查看子账号 </a></li>
+                        <li><a href="<%=basePath%>updateUsers.action">提现管理 </a></li>
+                        <li><a href="<%=basePath%>updateUsers.action">提现记录 </a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i  class="iconfont icon_gerenxinxi"></i>个人设置</a>
+                <li><a href="#"><i  class="iconfont icon_gerenxinxi"></i>数据统计</a>
                     <ul class="submenu">
-                        <li><a href="<%=basePath%>xwyh_query.action">修改密码 </a></li>
+                        <li><a href="<%=basePath%>xwyh_query.action">领纸记录 </a></li>
+                        <li><a href="<%=basePath%>xwyh_query.action">出纸量统计 </a></li>
+                        <li><a href="<%=basePath%>xwyh_query.action">收益统计 </a></li>
                     </ul>
                 </li>
 
@@ -134,7 +141,7 @@
 <div style="clear:both;"></div>
 <div class="custom_line_height_150 custom_width_100b">&nbsp;</div>
 <div class="custom_width_100b custom_height_60 custom_line_height_60 custom_text_align_center custom_background_3c4f6d custom_color_fff custom_margin_top_60 custom_bottom_0 custom_position_fixed">
-    <span>© 2016 【嵘雅达后台管理系统 POWERED BY 宜租车联网集团UCAR-NET.CN】 版权所有</span>
+    <span>2018 纸巾机管理后台 © 信腾科技 版权所有</span>
 </div>
 </body>
 </html>

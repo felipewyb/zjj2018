@@ -36,7 +36,7 @@ java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat(
 
 
         <div class="custom_margin_left_300 custom_height_200 custom_margin_top_200">
-  			<span class="custom_font_size_30  custom_color_hong_ff0000">登录成功！</span>
+  			<span class="custom_font_size_30  custom_color_hong_ff0000">欢迎登录纸巾机管理平台！</span>
   		<br><br>
   		<span class="custom_font_size_20  ">登录时间：<%=time %></span>
   		  		<br><br>

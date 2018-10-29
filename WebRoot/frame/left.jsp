@@ -89,16 +89,15 @@
             </div>
         </div>
     </div>
-    <title>管理后台</title>
+    <title>纸巾机管理后台 V1.0</title>
 
     <div class="custom_width_240 custom_float_left">
         <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
             <ul id="demo-list">
                 <li class="active"><a href="#"><i class="iconfont icon_yonghuguanli"></i>设备管理 </a>
                     <ul class="submenu">
-                        <li><a href="<%=basePath%>sijileixing_query.action">查看设备 </a></li>
-                        <li><a href="<%=basePath%>siji_query.action">设备类型 </a></li>
-                        <li><a href="<%=basePath%>siji_query.action">设备审核 </a></li>
+                        <li><a href="<%=basePath%>machine_query.action">查看设备 </a></li>
+                        <li><a href="<%=basePath%>matype_query.action">设备类型 </a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class="iconfont icon_jibendangan"></i>广告管理 </a>

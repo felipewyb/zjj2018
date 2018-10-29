@@ -70,49 +70,6 @@
 	<!--启动spring事务注解功能-->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<!-- 驾照类型-->
-	<bean id="jiazhaoleixingAction" class="com.ryda.action.JiazhaoleixingAction" scope="prototype">
-		<property name="service">
-			<bean class="com.ryda.service.JiazhaoleixingServiceImpl"></bean>
-		</property>
-	</bean>
-
-
-	<!-- 司机类型-->
-	<bean id="sijileixingAction" class="com.ryda.action.SijileixingAction" scope="prototype">
-		<property name="service">
-			<bean class="com.ryda.service.Sijileixinglmpl"></bean>
-		</property>
-	</bean>
-
-	<!-- 司机简历1-->
-	<!-- <bean id="sijijianliAction" class="com.ryda.action.SijijianliAction" scope="prototype">
-		<property name="service">
-			<bean class="com.ryda.service.SijijianliServiceImpl"></bean>
-		</property>
-	</bean> -->
-	
-	<!-- 司机简历-->
-	<bean id="sijiAction" class="com.ryda.action.SijiAction" scope="prototype">
-		<property name="service">
-			<bean class="com.ryda.service.SijiServiceImpl"></bean>
-		</property>
-	</bean>
-	
-	<!-- 司机地区-->
-	<bean id="diquAction" class="com.ryda.action.DiquAction" scope="prototype">
-		<property name="service">
-			<bean class="com.ryda.service.DiquServiceImpl"></bean>
-		</property>
-	</bean>
-
-	<!-- 司机等级-->
-	<bean id="sijidengjiAction" class="com.ryda.action.SijiDengjiAction" scope="prototype">
-		<property name="service">
-			<bean class="com.ryda.service.Siji_dengjipingdingServiceImpl"></bean>
-		</property>
-	</bean>
-
 	<!--登录 -->
 	<bean id="loginAction" class="com.ryda.action.LoginAcion">
 		<property name="ils">
@@ -127,6 +84,21 @@
 
 	<!-- 验证码 -->
 	<bean id="securityCodeImageAction" class="com.ryda.action.ValidCodeAction" scope="prototype">
+	</bean>
+
+
+	<!-- 设备类型-->
+	<bean id="matypeAction" class="com.ryda.action.MatypeAction" scope="prototype">
+		<property name="service">
+			<bean class="com.ryda.service.MatypeServicelmpl"></bean>
+		</property>
+	</bean>
+
+	<!-- 查看设备-->
+	<bean id="machineAction" class="com.ryda.action.MachineAction" scope="prototype">
+		<property name="service">
+			<bean class="com.ryda.service.MachineServicelmpl"></bean>
+		</property>
 	</bean>
 
 </beans>

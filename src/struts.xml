@@ -24,56 +24,6 @@
 		</action>
 		 -->
 
-		<!-- 驾照类型 -->
-		<action name="jiazhaoleixing_*" class="jiazhaoleixingAction" method="{1}">
-			<result name="query">/ryda/jiazhaoleixing/list.jsp</result>
-			<result name="addpage" type="dispatcher">/ryda/jiazhaoleixing/add.jsp</result>
-			<result name="editpage" type="dispatcher">/ryda/jiazhaoleixing/edit.jsp</result>
-			<result name="requery" type="redirect">/jiazhaoleixing_query.action</result>
-		</action> 
-
-		<!-- 司机类型 -->
-		<action name="sijileixing_*" class="sijileixingAction" method="{1}">
-			<result name="query">/ryda/sijileixing/list.jsp</result>
-			<result name="addpage" type="dispatcher">/ryda/sijileixing/add.jsp</result>
-			<result name="editpage" type="dispatcher">/ryda/sijileixing/edit.jsp</result>
-			<result name="requery" type="redirect">/sijileixing_query.action</result>
-		</action> 
-
-		<!-- 司机简历 1-->
-		<!-- <action name="sijijianli_*" class="sijijianliAction" method="{1}">
-			<result name="query">/ryda/sijijianli/list.jsp</result>
-			<result name="addpage" type="dispatcher">/ryda/sijijianli/add.jsp</result>
-			<result name="editpage" type="dispatcher">/ryda/sijijianli/edit.jsp</result>
-			<result name="requery" type="redirect">/sijijianli_query.action</result>
-		</action> -->
-
-		
-		<!-- 司机简历 -->
-		<action name="siji_*" class="sijiAction" method="{1}">
-			<result name="query">/ryda/siji/list.jsp</result>
-			<result name="addpage" type="dispatcher">/ryda/siji/add.jsp</result>
-			<result name="editpage" type="dispatcher">/ryda/siji/edit.jsp</result>
-			<result name="requery" type="redirect">/siji_query.action</result>
-		</action>
-		
-		<!-- 司机地区 -->
-		<action name="diqu_*" class="diquAction" method="{1}">
-			<result name="query">/ryda/diqu/list.jsp</result>
-			<result name="addpage" type="dispatcher">/ryda/diqu/add.jsp</result>
-			<result name="editpage" type="dispatcher">/ryda/diqu/edit.jsp</result>
-			<result name="requery" type="redirect">/diqu_query.action</result>
-		</action>
-		
-		<!-- 司机等级 -->
-		<action name="dengji_*" class="sijidengjiAction" method="{1}">
-			<result name="query">/ryda/sijidengjipingding/list.jsp</result>
-			<result name="addpage" type="dispatcher">/ryda/sijidengjipingding/add.jsp</result>
-			<result name="editpage" type="dispatcher">/ryda/sijidengjipingding/edit.jsp</result>
-			<result name="requery" type="redirect">/dengji_query.action</result>
-		</action>
-
-
 		<!-- 登陆 -->
 		<action name="login_*" class="loginAction" method="{1}">
 			<result name="login">/ryda/login.jsp</result>
@@ -87,8 +37,6 @@
 			<result name="welcome" >/ryda/welcome.jsp</result>
 		</action>
 
-
-
 		<!-- 登陆验证码 -->
 		<action name="sci_*" class="securityCodeImageAction" method="{1}">
 			<result name="success" type="stream">
@@ -97,6 +45,24 @@
 				<param name="bufferSize">2048</param>
 			</result>
 		</action>
+
+		<!-- 设备类型 -->
+		<action name="matype_*" class="matypeAction" method="{1}">
+			<result name="query">/ryda/matype/list.jsp</result>
+			<result name="addpage" type="dispatcher">/ryda/matype/add.jsp</result>
+			<result name="editpage" type="dispatcher">/ryda/matype/edit.jsp</result>
+			<result name="requery" type="redirect">/matype_query.action</result>
+		</action>
+
+		<!-- 查看设备 -->
+		<action name="machine_*" class="machineAction" method="{1}">
+			<result name="query">/ryda/machine/list.jsp</result>
+			<!-- 设备审核 -->
+			<result name="editpage" type="dispatcher">/ryda/machine/edit.jsp</result>
+			<result name="requery" type="redirect">/machine_query.action</result>
+		</action>
+
+
 
 	</package>
 

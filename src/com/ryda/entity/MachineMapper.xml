@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ryda.mapper.MachineMapper" >
+  <resultMap id="BaseResultMap" type="com.ryda.entity.Machine" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="gps" property="gps" jdbcType="VARCHAR" />
+    <result column="situation" property="situation" jdbcType="INTEGER" />
+    <result column="elect" property="elect" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="macode" property="macode" jdbcType="VARCHAR" />
+    <result column="shopname" property="shopname" jdbcType="VARCHAR" />
+    <result column="shopadd" property="shopadd" jdbcType="VARCHAR" />
+    <result column="opname" property="opname" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="matype" property="matype" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="DOUBLE" />
+    <result column="total" property="total" jdbcType="INTEGER" />
+    <result column="approve" property="approve" jdbcType="INTEGER" />
+    <result column="consumo" property="consumo" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ryda.entity.Machine" >
+    insert into machine (id, code, gps, 
+      situation, elect, name, 
+      macode, shopname, shopadd, 
+      opname, phone, matype, 
+      price, total, approve, 
+      consumo)
+    values (#{id,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{gps,jdbcType=VARCHAR}, 
+      #{situation,jdbcType=INTEGER}, #{elect,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{macode,jdbcType=VARCHAR}, #{shopname,jdbcType=VARCHAR}, #{shopadd,jdbcType=VARCHAR}, 
+      #{opname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{matype,jdbcType=INTEGER}, 
+      #{price,jdbcType=DOUBLE}, #{total,jdbcType=INTEGER}, #{approve,jdbcType=INTEGER}, 
+      #{consumo,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ryda.entity.Machine" >
+    insert into machine
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="gps != null" >
+        gps,
+      </if>
+      <if test="situation != null" >
+        situation,
+      </if>
+      <if test="elect != null" >
+        elect,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="macode != null" >
+        macode,
+      </if>
+      <if test="shopname != null" >
+        shopname,
+      </if>
+      <if test="shopadd != null" >
+        shopadd,
+      </if>
+      <if test="opname != null" >
+        opname,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="matype != null" >
+        matype,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="total != null" >
+        total,
+      </if>
+      <if test="approve != null" >
+        approve,
+      </if>
+      <if test="consumo != null" >
+        consumo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="gps != null" >
+        #{gps,jdbcType=VARCHAR},
+      </if>
+      <if test="situation != null" >
+        #{situation,jdbcType=INTEGER},
+      </if>
+      <if test="elect != null" >
+        #{elect,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="macode != null" >
+        #{macode,jdbcType=VARCHAR},
+      </if>
+      <if test="shopname != null" >
+        #{shopname,jdbcType=VARCHAR},
+      </if>
+      <if test="shopadd != null" >
+        #{shopadd,jdbcType=VARCHAR},
+      </if>
+      <if test="opname != null" >
+        #{opname,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="matype != null" >
+        #{matype,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="total != null" >
+        #{total,jdbcType=INTEGER},
+      </if>
+      <if test="approve != null" >
+        #{approve,jdbcType=INTEGER},
+      </if>
+      <if test="consumo != null" >
+        #{consumo,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="queryMachine" resultMap="BaseResultMap">
+  select * from machine
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from machine
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.ryda.entity.Machine" >
+  update machine
+  set approve=1,consumo=0,price = #{price,jdbcType=DOUBLE},total = #{total,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

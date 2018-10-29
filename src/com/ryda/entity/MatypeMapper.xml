@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ryda.mapper.MatypeMapper" >
+  <resultMap id="BaseResultMap" type="com.ryda.entity.Matype" >
+    <id column="ttype" property="ttype" jdbcType="INTEGER" />
+    <result column="tname" property="tname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ttype, tname
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from matype
+    where ttype = #{ttype,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from matype
+    where ttype = #{ttype,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ryda.entity.Matype" >
+    insert into matype (ttype, tname)
+    values (#{ttype,jdbcType=INTEGER}, #{tname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ryda.entity.Matype" >
+    insert into matype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ttype != null" >
+        ttype,
+      </if>
+      <if test="tname != null" >
+        tname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ttype != null" >
+        #{ttype,jdbcType=INTEGER},
+      </if>
+      <if test="tname != null" >
+        #{tname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ryda.entity.Matype" >
+    update matype
+    <set >
+      <if test="tname != null" >
+        tname = #{tname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ttype = #{ttype,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ryda.entity.Matype" >
+    update matype
+    set tname = #{tname,jdbcType=VARCHAR}
+    where ttype = #{ttype,jdbcType=INTEGER}
+  </update>
+
+  <select id="queryMatype" resultMap="BaseResultMap">
+  select * from matype
+  </select>
+
+  <select id="checkforrepeat" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select  count(*)
+    from matype
+    where tname like #{leixingName,jdbcType=VARCHAR}
+  </select>
+</mapper>

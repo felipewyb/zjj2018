@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String uname=(String) session.getAttribute("username");
+    String levelStr=(String) session.getAttribute("level");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,11 +29,6 @@
     <script type="text/javascript" src="bag/js/custom/general.js"></script>
     <script type="text/javascript" src="bag/js/custom/forms.js"></script>
     <script type="text/javascript" src="bag/js/custom/productlist.js"></script>
-
-
-
-
-
     <script type="text/javascript" src="bag/js/plugins/colorpicker.js"></script>
     <script type="text/javascript" src="bag/js/plugins/jquery.jgrowl.js"></script>
     <script type="text/javascript" src="bag/js/plugins/jquery.alerts.js"></script>
@@ -73,7 +71,7 @@
             </div>
             <div class="userinfo">
                 <img src="bag/images/thumbs/avatar.png" alt="" />
-                <span>系统管理员</span>
+                <span><%=uname %></span>
             </div><!--userinfo-->
 
             <div class="userinfodrop">
@@ -81,7 +79,7 @@
                     <a href=""><img src="bag/images/thumbs/avatarbig.png" alt="" /></a>
                 </div>
                 <div class="userdata">
-                    <h4>系统管理员</h4>
+                    <h4><%=uname %>（<%=levelStr %>）</h4>
                     <ul>
                         <li><a href="<%=basePath%>login_logout.action">退出登录</a></li>
                     </ul>
@@ -94,6 +92,8 @@
     <div class="custom_width_240 custom_float_left">
         <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
             <ul id="demo-list">
+
+                <s:if test="#session.userlevel==0">
                 <li class="active"><a href="#"><i class="iconfont icon_yonghuguanli"></i>设备管理 </a>
                     <ul class="submenu">
                         <li><a href="<%=basePath%>machine_query.action">查看设备 </a></li>
@@ -102,14 +102,14 @@
                 </li>
                 <li><a href="#"><i class="iconfont icon_jibendangan"></i>广告管理 </a>
                     <ul class="submenu">
-                        <li><a href="<%=basePath%>diqu_query.action">添加广告</a></li>
-                        <li><a href="<%=basePath%>dengji_query.action">广告管理 </a></li>
+                        <%--<li><a href="<%=basePath%>diqu_query.action">添加广告</a></li>--%>
+                        <li><a href="<%=basePath%>adlaunch_query.action">广告投放管理 </a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i  class="iconfont icon_quanxianguanli"></i>子后台管理 </a>
                     <ul class="submenu">
-                        <li><a href="<%=basePath%>updateUsers.action">子后台角色分配 </a></li>
-                        <li><a href="<%=basePath%>updateUsers.action">子后台分配 </a></li>
+                        <li><a href="<%=basePath%>backrole_query.action">子后台角色分配 </a></li>
+                        <li><a href="<%=basePath%>backrole_addaccount.action">子后台分配 </a></li>
                         <li><a href="<%=basePath%>updateUsers.action">查看子账号 </a></li>
                         <li><a href="<%=basePath%>updateUsers.action">提现管理 </a></li>
                         <li><a href="<%=basePath%>updateUsers.action">提现记录 </a></li>
@@ -122,6 +122,27 @@
                         <li><a href="<%=basePath%>xwyh_query.action">收益统计 </a></li>
                     </ul>
                 </li>
+                </s:if>
+                <s:if test="#session.userlevel>0">
+                    <li class="active"><a href="#"><i class="iconfont icon_yonghuguanli"></i>我的设备 </a>
+                        <ul class="submenu">
+                            <li><a href="<%=basePath%>machine_query.action">我的设备 </a></li>
+                            <li><a href="<%=basePath%>matype_query.action">我下级的设备 </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="iconfont icon_jibendangan"></i>收益管理 </a>
+                        <ul class="submenu">
+                            <li><a href="<%=basePath%>adlaunch_query.action">我的收益 </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="iconfont icon_gerenxinxi"></i>提现管理 </a>
+                        <ul class="submenu">
+                            <li><a href="<%=basePath%>adlaunch_query.action">申请提现 </a></li>
+                            <li><a href="<%=basePath%>adlaunch_query.action">提现记录 </a></li>
+                        </ul>
+                    </li>
+                </s:if>
+                <s:else>ERROR</s:else>
 
             </ul>
             <div style="clear:both;"></div>

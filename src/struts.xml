@@ -63,6 +63,27 @@
 		</action>
 
 
+		<!-- 广告管理 -->
+		<action name="adlaunch_*" class="adlaunchAction" method="{1}">
+			<result name="query">/ryda/adlaunch/list.jsp</result>
+			<result name="editpage" type="dispatcher">/ryda/adlaunch/edit.jsp</result>
+			<result name="requery" type="redirect">/adlaunch_query.action</result>
+		</action>
+
+		<!-- 子后台角色分配 -->
+		<action name="backrole_*" class="backroleAction" method="{1}">
+			<result name="query">/ryda/backrole/list.jsp</result>
+			<result name="addaccount">/ryda/backrole/addaccount.jsp</result>
+			<result name="addagent1">/ryda/backrole/addagent1.jsp</result>
+			<result name="addagent2">/ryda/backrole/addagent2.jsp</result>
+			<result name="addagent3">/ryda/backrole/addagent3.jsp</result>
+			<result name="addagent4">/ryda/backrole/addagent4.jsp</result>
+			<result name="addagent5">/ryda/backrole/addagent5.jsp</result>
+			<result name="editpage" type="dispatcher">/ryda/backrole/edit.jsp</result>
+			<result name="requery" type="redirect">/backrole_query.action</result>
+		</action>
+
+
 
 	</package>
 

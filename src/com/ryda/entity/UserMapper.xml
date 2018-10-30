@@ -74,4 +74,12 @@
     SELECT * from user where user_account = #{username} and user_password = #{password}
   </select>
 
+  <select id="getLevel" resultType="java.lang.String" parameterType="java.lang.Integer" >
+    SELECT role FROM backrole WHERE id=#{id}
+  </select>
+
+  <select id="getIntLevel" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    SELECT level from user where user_account = #{username}
+  </select>
+
 </mapper>

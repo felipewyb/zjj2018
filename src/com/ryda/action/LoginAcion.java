@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 public class LoginAcion {
 	private ILoginService ils;//service层
 	private String username;
+	private String level;
+	private int userlevel;
 	private String password;
 	private String vcode;
 	private String returnValue;
@@ -24,6 +26,11 @@ public class LoginAcion {
 				setReturnValue("用户名或密码错误！请重新输入！");
 				return "login";
 			} else {
+				userlevel=ils.getIntLevel(username);
+				level=ils.getLevelByUsername(userlevel);
+				session.setAttribute("level",level);
+				session.setAttribute("userlevel",userlevel);
+				session.setAttribute("username",username);
 				return stauts;
 			}
 
@@ -97,5 +104,21 @@ public class LoginAcion {
 
 	public void setReturnValue(String returnValue) {
 		this.returnValue = returnValue;
+	}
+
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
+	public int getUserlevel() {
+		return userlevel;
+	}
+
+	public void setUserlevel(int userlevel) {
+		this.userlevel = userlevel;
 	}
 }

@@ -101,6 +101,20 @@
 		</property>
 	</bean>
 
+	<!-- 广告管理-->
+	<bean id="adlaunchAction" class="com.ryda.action.AdlaunchAction" scope="prototype">
+		<property name="service">
+			<bean class="com.ryda.service.AdlaunchServicelmpl"></bean>
+		</property>
+	</bean>
+
+	<!-- 子后台角色分配-->
+	<bean id="backroleAction" class="com.ryda.action.BackroleAction" scope="prototype">
+		<property name="service">
+			<bean class="com.ryda.service.BackroleServicelmpl"></bean>
+		</property>
+	</bean>
+
 </beans>
 
 	 

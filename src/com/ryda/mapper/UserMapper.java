@@ -19,4 +19,8 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     List login(HashMap map);
+
+    String getLevel(int id);
+
+    int getIntLevel(String username);
 }

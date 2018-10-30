@@ -22,6 +22,8 @@ java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat(
    java.util.Date currentTime = new java.util.Date();  
    String time = simpleDateFormat.format(currentTime).toString(); 
    String ip=request.getLocalAddr();
+	String level=(String) session.getAttribute("level");
+   String uname=(String) session.getAttribute("username");
 %>
   </head>
 
@@ -41,6 +43,10 @@ java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat(
   		<span class="custom_font_size_20  ">登录时间：<%=time %></span>
   		  		<br><br>
   		  		<span class="custom_font_size_20 custom_color_lan_4477c0 ">登录IP：<%=ip %></span>
+			<br><br>
+  		  		<span class="custom_font_size_20 custom_color_lan_4477c0 ">登录用户：<%=uname %></span>
+			<br><br>
+  		  		<span class="custom_font_size_20 custom_color_lan_4477c0 ">用户等级：<%=level %></span>
         </div>
         <div class="widgetpage custom_padding_15">
             

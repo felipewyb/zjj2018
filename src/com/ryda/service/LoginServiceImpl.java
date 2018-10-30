@@ -31,4 +31,14 @@ public class LoginServiceImpl implements ILoginService {
 		
 		
 	}
+
+	@Override
+	public String getLevelByUsername(int id) {
+		return mapper.getLevel(id);
+	}
+
+	@Override
+	public int getIntLevel(String username) {
+		return  mapper.getIntLevel(username);
+	}
 }
